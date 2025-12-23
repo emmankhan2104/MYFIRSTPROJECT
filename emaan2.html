@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SorryAmna 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins&display=swap" rel="stylesheet">
+
+<style>
+*{
+    box-sizing:border-box;
+}
+body{
+    margin:0;
+    height:100vh;
+    background: linear-gradient(135deg,#ffd6e8,#fff0f5);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    font-family:'Poppins',sans-serif;
+}
+
+/* Falling hearts */
+.heart{
+    position:absolute;
+    top:-20px;
+    font-size:20px;
+    animation: fall linear infinite;
+    opacity:0.8;
+}
+@keyframes fall{
+    0%{ transform:translateY(0); }
+    100%{ transform:translateY(110vh); }
+}
+
+/* Card */
+.container{
+    background:white;
+    padding:30px;
+    border-radius:25px;
+    width:90%;
+    max-width:360px;
+    text-align:center;
+    box-shadow:0 15px 35px rgba(0,0,0,0.2);
+    animation: zoom 1s ease;
+}
+@keyframes zoom{
+    from{ transform:scale(0.7); opacity:0; }
+    to{ transform:scale(1); opacity:1; }
+}
+
+/* Neon name */
+h1{
+    font-family:'Pacifico',cursive;
+    font-size:42px;
+    color:#ff4d6d;
+    text-shadow:
+        0 0 5px #ff99ac,
+        0 0 10px #ff4d6d,
+        0 0 20px #ff4d6d;
+    animation: glow 1.5s infinite alternate;
+}
+@keyframes glow{
+    from{ text-shadow:0 0 5px #ffb3c6; }
+    to{ text-shadow:0 0 25px #ff4d6d; }
+}
+
+p{
+    font-size:15px;
+    color:#555;
+    margin:20px 0;
+}
+
+.cute{
+    font-size:28px;
+    animation:bounce 2s infinite;
+}
+@keyframes bounce{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-10px); }
+}
+
+/* Buttons */
+button{
+    border:none;
+    padding:12px 18px;
+    border-radius:25px;
+    margin:8px;
+    cursor:pointer;
+    transition:0.3s;
+    font-size:14px;
+}
+.yes{
+    background:#ff4d6d;
+    color:white;
+}
+.yes:hover{
+    transform:scale(1.1);
+}
+.no{
+    background:#eee;
+}
+.no:hover{
+    transform:scale(1.1);
+}
+
+footer{
+    margin-top:12px;
+    font-size:12px;
+    color:gray;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="c:\Users\ABC\Downloads\Chalo Jaane Do(PagaiWorld.com).mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+    <h1>Sorry Amna 🥺</h1>
+
+    <div class="cute">💖 💕 💗</div>
+
+    <p>
+        Amna mujhe maaf krdo mere ghlt or kharab alfazon k liye im so sorry amna❤️  
+        <br><br>
+        Mujh se jo bhi ghalti hui ho  
+        dil se maafi cchahti hoon 🙏  
+        <br><br>
+        mai bhot sharminda hoon apne se🥺
+    </p>
+
+    <button class="yes" onclick="forgive()">I Forgive You 💖</button>
+    <button class="no" onclick="angry()">Still Angry 😤</button>
+
+    <footer>
+        Made with ❤️ only for Amna
+    </footer>
+</div>
+
+<script>
+/* Alerts */
+function forgive(){
+    alert("iloveyou yrr💖!");
+}
+function angry(){
+    alert("Main phir bhi sorry bolti rahoon gii🥺");
+}
+
+/* Falling hearts generator */
+setInterval(()=>{
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="💖";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(2+Math.random()*3)+"s";
+    document.body.appendChild(heart);
+
+    setTimeout(()=>heart.remove(),5000);
+},300);
+</script>
+
+</body>
+</html>
